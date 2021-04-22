@@ -19,10 +19,14 @@ else:
 # main
 def dis(a):
 	print("IP Address:-\t\t"+a['ip'])
-	print("Hostname:-\t\t"+a['hostname'])
-	print("Location:-\t\t"+str(a['loc']))
-	print("City:-\t\t\t"+a['city'])
-	print("Timezone:-\t\t"+a['timezone'])
+	if "hostname" in a:
+		print("Hostname:-\t\t"+a['hostname'])
+	if "loc" in a:
+		print("Location:-\t\t"+str(a['loc']))
+	if "city" in a:
+		print("City:-\t\t\t"+a['city'])
+	if "timezone" in a:
+		print("Timezone:-\t\t"+a['timezone'])
 print(bar)
 r=json.loads(requests.get(url).text)
 dis(r)
